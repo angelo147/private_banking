@@ -1,17 +1,17 @@
 package edu.privatebnk.consultation.rest;
 
-import edu.privatebnk.consultation.persistence.model.Customer;
-import edu.privatebnk.consultation.persistence.model.InvestmentProfile;
+import edu.privatebnk.consultation.persistence.model.*;
 
 import java.util.List;
 
 public class ResponseWrapper extends Response {
     private List<Customer> customers;
     private List<InvestmentProfile> profiles;
+    private List<ConsultRequest> requests;
+    private List<ConsultReport> reports;
+    List<InvestProposal> proposals;
 
-    public ResponseWrapper(List<Customer> customers, List<InvestmentProfile> profiles) {
-        this.customers = customers;
-        this.profiles = profiles;
+    public ResponseWrapper() {
     }
 
     public ResponseWrapper(ResponseCode code, List<Customer> customers, List<InvestmentProfile> profiles) {
@@ -34,5 +34,29 @@ public class ResponseWrapper extends Response {
 
     public void setProfiles(List<InvestmentProfile> profiles) {
         this.profiles = profiles;
+    }
+
+    public List<ConsultRequest> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(List<ConsultRequest> requests) {
+        this.requests = requests;
+    }
+
+    public List<ConsultReport> getReports() {
+        return reports;
+    }
+
+    public void setReports(List<ConsultReport> reports) {
+        this.reports = reports;
+    }
+
+    public List<InvestProposal> getProposals() {
+        return proposals;
+    }
+
+    public void setProposals(List<InvestProposal> proposals) {
+        this.proposals = proposals;
     }
 }

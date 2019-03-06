@@ -13,6 +13,7 @@ public class InvestProposal {
     private Date dateAccepted;
     private boolean accepted;
     private ConsultRequest request;
+    private JsonDocument document;
 
     @Id
     @Column(name = "proposalid")
@@ -63,5 +64,25 @@ public class InvestProposal {
 
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "requestid", referencedColumnName = "requestid", nullable = false)
+    public ConsultRequest getRequest() {
+        return request;
+    }
+
+    public void setRequest(ConsultRequest request) {
+        this.request = request;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "documentid", referencedColumnName = "documentid", nullable = false)
+    public JsonDocument getDocument() {
+        return document;
+    }
+
+    public void setDocument(JsonDocument document) {
+        this.document = document;
     }
 }

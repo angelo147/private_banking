@@ -1,8 +1,7 @@
 package edu.privatebnk.consultation.rest;
 
 import edu.privatebnk.consultation.persistence.controller.Controller;
-import edu.privatebnk.consultation.persistence.model.Customer;
-import edu.privatebnk.consultation.persistence.model.UserEntity;
+import edu.privatebnk.consultation.persistence.model.*;
 
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
@@ -10,6 +9,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,9 +54,44 @@ public class ConsultationEndpoint {
     }
 
     @GET
-    @Path("/user")
-    public javax.ws.rs.core.Response getUser() {
-        return Response.ok(controller.findByυId(1)).type(MediaType.APPLICATION_JSON_TYPE).build();
+    @Path("/user/{userid}")
+    public javax.ws.rs.core.Response getUser(@PathParam("userid") int userid) {
+        return Response.ok(controller.findByυId(userid)).type(MediaType.APPLICATION_JSON_TYPE).build();
+    }
+
+    @GET
+    @Path("/request/all/{userid}")
+    //@RolesAllowed({"CRO","MA"})
+    //@ValidateUser
+    public javax.ws.rs.core.Response getConsultRequests(@PathParam("userid") int userid, @QueryParam("proccessed") Boolean proccesed) {
+        UserEntity user = controller.findByυId(userid);
+        List<ConsultRequest> requests = new ArrayList<>();
+        if(user.getRoles().stream().findFirst().orElse(new RoleEntity()).getRole().equalsIgnoreCase(Role.CRO.toString()))
+            requests = proccesed == null ? controller.findConsultRequestsCRO(userid) : controller.findConsultRequestsBystatusCRO(userid, proccesed);
+        else if(user.getRoles().stream().findFirst().orElse(new RoleEntity()).getRole().equalsIgnoreCase(Role.MA.toString()))
+            requests = proccesed == null ? controller.findConsultRequestsMA(userid) : controller.findConsultRequestsBystatusMA(userid, proccesed);
+        ResponseWrapper wrapper = new ResponseWrapper(); wrapper.setRequests(requests); wrapper.setErrorCode(ResponseCode.OK);
+        return Response.ok(wrapper).type(MediaType.APPLICATION_JSON_TYPE).build();
+    }
+
+    @GET
+    @Path("/report/all/{userid}")
+    //@RolesAllowed({"MA"})
+    //@ValidateUser
+    public javax.ws.rs.core.Response getConsultReports(@PathParam("userid") int userid) {
+        ResponseWrapper wrapper = new ResponseWrapper(); wrapper.setReports(controller.findConsultReportMA(userid)); wrapper.setErrorCode(ResponseCode.OK);
+        return Response.ok(wrapper).type(MediaType.APPLICATION_JSON_TYPE).build();
+    }
+
+    @GET
+    @Path("/proposal/all/{userid}")
+    //@RolesAllowed({"CRO"})
+    //@ValidateUser
+    public javax.ws.rs.core.Response getInvestProposals(@PathParam("userid") int userid) {
+        List<ConsultRequest> requests = controller.findConsultRequestsBystatusCRO(userid, true);
+        List<InvestProposal> proposals = requests.stream().map(ConsultRequest::getProposal).collect(Collectors.toList());
+        ResponseWrapper wrapper = new ResponseWrapper(); wrapper.setProposals(proposals); wrapper.setErrorCode(ResponseCode.OK);
+        return Response.ok(wrapper).type(MediaType.APPLICATION_JSON_TYPE).build();
     }
 
     @POST

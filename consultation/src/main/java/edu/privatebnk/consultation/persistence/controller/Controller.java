@@ -1,8 +1,6 @@
 package edu.privatebnk.consultation.persistence.controller;
 
-import edu.privatebnk.consultation.persistence.model.Customer;
-import edu.privatebnk.consultation.persistence.model.InvestmentProfile;
-import edu.privatebnk.consultation.persistence.model.UserEntity;
+import edu.privatebnk.consultation.persistence.model.*;
 import org.jboss.logging.Logger;
 
 import javax.ejb.Stateless;
@@ -83,5 +81,77 @@ public class Controller {
         }
         log.infov("Found {0} UserEntity relationships!", user);
         return user;
+    }
+
+    public List<ConsultRequest> findConsultRequestsBystatusCRO(int userid, boolean proccessed) {
+        List<ConsultRequest> requests;
+        try {
+            requests = em.createNamedQuery("ConsultRequest.findAllByStatusCRO", ConsultRequest.class)
+                    .setParameter("proccessed", proccessed)
+                    .setParameter("userid", userid)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            log.error("find by ActiveByUsername failed", re);
+            return null;
+        }
+        log.infov("Found {0} UserEntity relationships!", requests);
+        return requests;
+    }
+
+    public List<ConsultRequest> findConsultRequestsCRO(int userid) {
+        List<ConsultRequest> requests;
+        try {
+            requests = em.createNamedQuery("ConsultRequest.findAllCRO", ConsultRequest.class)
+                    .setParameter("userid", userid)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            log.error("find by ActiveByUsername failed", re);
+            return null;
+        }
+        log.infov("Found {0} UserEntity relationships!", requests);
+        return requests;
+    }
+
+    public List<ConsultRequest> findConsultRequestsBystatusMA(int userid, boolean proccessed) {
+        List<ConsultRequest> requests;
+        try {
+            requests = em.createNamedQuery("ConsultRequest.findAllByStatusCRO", ConsultRequest.class)
+                    .setParameter("proccessed", proccessed)
+                    .setParameter("userid", userid)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            log.error("find by ActiveByUsername failed", re);
+            return null;
+        }
+        log.infov("Found {0} UserEntity relationships!", requests);
+        return requests;
+    }
+
+    public List<ConsultRequest> findConsultRequestsMA(int userid) {
+        List<ConsultRequest> requests;
+        try {
+            requests = em.createNamedQuery("ConsultRequest.findAllCRO", ConsultRequest.class)
+                    .setParameter("userid", userid)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            log.error("find by ActiveByUsername failed", re);
+            return null;
+        }
+        log.infov("Found {0} UserEntity relationships!", requests);
+        return requests;
+    }
+
+    public List<ConsultReport> findConsultReportMA(int userid) {
+        List<ConsultReport> reports;
+        try {
+            reports = em.createNamedQuery("ConsultReport.findAll", ConsultReport.class)
+                    .setParameter("userid", userid)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            log.error("find by ActiveByUsername failed", re);
+            return null;
+        }
+        log.infov("Found {0} UserEntity relationships!", reports);
+        return reports;
     }
 }

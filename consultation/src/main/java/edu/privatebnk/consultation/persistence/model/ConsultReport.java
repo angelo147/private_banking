@@ -1,10 +1,13 @@
 package edu.privatebnk.consultation.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "consultreport", schema = "private_banking", catalog = "")
+@NamedQuery(name = "ConsultReport.findAll", query = "SELECT cr FROM ConsultReport cr where cr.ma.userid=:userid")
 public class ConsultReport {
     private int reportid;
     //private UserEntity cro;
@@ -12,7 +15,9 @@ public class ConsultReport {
     //private InvestmentProfile profile;
     private Date dateRequested;
     private Date dateProccessed;
+    @JsonIgnore
     private ConsultRequest request;
+    private JsonDocument document;
 
     @Id
     @Column(name = "reportid")
@@ -25,6 +30,9 @@ public class ConsultReport {
         this.reportid = reportid;
     }
 
+    @OneToOne
+    //@PrimaryKeyJoinColumn
+    @JoinColumn(name = "requestid", referencedColumnName = "requestid", nullable = false)
     public ConsultRequest getRequest() {
         return request;
     }
@@ -41,6 +49,8 @@ public class ConsultReport {
         this.cro = cro;
     }*/
 
+    @ManyToOne
+    @JoinColumn(name = "maid", referencedColumnName = "userid", nullable = false)
     public UserEntity getMa() {
         return ma;
     }
@@ -71,5 +81,15 @@ public class ConsultReport {
 
     public void setDateProccessed(Date dateProccessed) {
         this.dateProccessed = dateProccessed;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "documentid", referencedColumnName = "documentid", nullable = false)
+    public JsonDocument getDocument() {
+        return document;
+    }
+
+    public void setDocument(JsonDocument document) {
+        this.document = document;
     }
 }
