@@ -33,7 +33,7 @@ public class JWTUtil {
         //refreshTokenExpires.toInstant().atZone(ZoneId.systemDefault()).toEpochSecond()
         Date insert = new Date();
         LocalDateTime localDateTime = insert.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        localDateTime = localDateTime.plusMinutes(5);
+        localDateTime = localDateTime.plusMinutes(30);
         Date expires = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
         UUID jti = UUID.randomUUID();
         try {
@@ -97,7 +97,8 @@ public class JWTUtil {
     }*/
 
     public List<Role> getRoles(String auth) {
-        return JWT.decode(auth).getClaim(CLAIM_ROLE).asList(Role.class);
+        final String a = auth.replaceFirst("Bearer" + " ", "");
+        return JWT.decode(a).getClaim(CLAIM_ROLE).asList(Role.class);
     }
     public int getUserid(String auth) {
         return JWT.decode(auth).getClaim(CLAIM_USERID).asInt();

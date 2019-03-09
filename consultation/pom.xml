@@ -58,13 +58,10 @@
         <artifactId>jaxrs-multipart</artifactId>
     </dependency><dependency>
         <groupId>io.thorntail</groupId>
-        <artifactId>mail</artifactId>
-    </dependency><dependency>
-        <groupId>io.thorntail</groupId>
         <artifactId>cdi</artifactId>
     </dependency><dependency>
         <groupId>io.thorntail</groupId>
-        <artifactId>jpa</artifactId>
+        <artifactId>jpa</artifactId> 
     </dependency><dependency>
         <groupId>io.thorntail</groupId>
         <artifactId>transactions</artifactId>

@@ -162,7 +162,7 @@ public class UserEntity {
         this.roles = roles;
     }
 
-    @OneToMany(mappedBy = "cro", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "cro", fetch = FetchType.LAZY)
     public List<Customer> getCustomers() {
         return customers;
     }

@@ -13,12 +13,16 @@ public class ConsultReport {
     //private UserEntity cro;
     private UserEntity ma;
     //private InvestmentProfile profile;
-    private Date dateRequested;
+    private Date dateReported;
     private Date dateProccessed;
     @JsonIgnore
     private ConsultRequest request;
     private JsonDocument document;
 
+    @PrePersist
+    private void onCreate(){
+        dateReported = new Date();
+    }
     @Id
     @Column(name = "reportid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,12 +71,12 @@ public class ConsultReport {
         this.profile = profile;
     }*/
 
-    public Date getDateRequested() {
-        return dateRequested;
+    public Date getDateReported() {
+        return dateReported;
     }
 
-    public void setDateRequested(Date dateRequested) {
-        this.dateRequested = dateRequested;
+    public void setDateReported(Date dateReported) {
+        this.dateReported = dateReported;
     }
 
     public Date getDateProccessed() {
@@ -83,7 +87,7 @@ public class ConsultReport {
         this.dateProccessed = dateProccessed;
     }
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "documentid", referencedColumnName = "documentid", nullable = false)
     public JsonDocument getDocument() {
         return document;

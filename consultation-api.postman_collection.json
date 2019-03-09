@@ -1,0 +1,1079 @@
+{
+	"info": {
+		"_postman_id": "3cf4d1a1-c6e8-4cc2-a668-9439be629ba2",
+		"name": "consultation-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCustomer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"1"
+					]
+				},
+				"description": "get customer data"
+			},
+			"response": [
+				{
+					"name": "GetCustomer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "497"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 14:09:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerid\": 1,\n    \"name\": \"Giorgos\",\n    \"surname\": \"Vourdoumpasis\",\n    \"address\": \"Deli 90\",\n    \"birthdate\": 1551477600000,\n    \"phone\": \"2108866957\",\n    \"email\": \"giorgos@mailinator.com\",\n    \"date_added\": 1551544836000,\n    \"status\": \"active\",\n    \"account\": {\n        \"accountid\": 1,\n        \"date_opened\": 1551544864000,\n        \"assets\": [\n            {\n                \"assetid\": 1,\n                \"name\": \"Rice\",\n                \"value\": 2.2,\n                \"type\": {\n                    \"assettypeid\": 2,\n                    \"type\": \"STOCK\"\n                }\n            }\n        ]\n    },\n    \"investmentProfile\": {\n        \"profileid\": 1,\n        \"dateCreated\": 1551569806000,\n        \"strategy\": {\n            \"strategyid\": 1,\n            \"description\": \"very defensive\",\n            \"risk\": 2.2\n        },\n        \"active\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GetAllCustomers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"all",
+						"1"
+					]
+				},
+				"description": "get all cro customers"
+			},
+			"response": [
+				{
+					"name": "GetAllCustomers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/all/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"all",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "722"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 14:11:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 0,\n    \"responseMessage\": \"OK\",\n    \"customers\": [\n        {\n            \"customerid\": 1,\n            \"name\": \"Giorgos\",\n            \"surname\": \"Vourdoumpasis\",\n            \"address\": \"Deli 90\",\n            \"birthdate\": 1551477600000,\n            \"phone\": \"2108866957\",\n            \"email\": \"giorgos@mailinator.com\",\n            \"date_added\": 1551544836000,\n            \"status\": \"active\",\n            \"account\": {\n                \"accountid\": 1,\n                \"date_opened\": 1551544864000,\n                \"assets\": [\n                    {\n                        \"assetid\": 1,\n                        \"name\": \"Rice\",\n                        \"value\": 2.2,\n                        \"type\": {\n                            \"assettypeid\": 2,\n                            \"type\": \"STOCK\"\n                        }\n                    }\n                ]\n            },\n            \"investmentProfile\": {\n                \"profileid\": 1,\n                \"dateCreated\": 1551569806000,\n                \"strategy\": {\n                    \"strategyid\": 1,\n                    \"description\": \"very defensive\",\n                    \"risk\": 2.2\n                },\n                \"active\": true\n            }\n        },\n        {\n            \"customerid\": 2,\n            \"name\": \"takis\",\n            \"surname\": \"takoglou\",\n            \"birthdate\": 1551564000000,\n            \"phone\": \"334436456\",\n            \"email\": \"takis@mail.com\",\n            \"date_added\": 1551626559000,\n            \"status\": \"active\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GetAllProfiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/profiles/all/2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"profiles",
+						"all",
+						"2",
+						"1"
+					]
+				},
+				"description": "get profiles of a customer for a certain cro"
+			},
+			"response": [
+				{
+					"name": "GetAllProfiles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/profiles/all/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"profiles",
+								"all",
+								"1",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "317"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 14:22:37 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 0,\n    \"responseMessage\": \"OK\",\n    \"profiles\": [\n        {\n            \"profileid\": 1,\n            \"dateCreated\": 1551569806000,\n            \"strategy\": {\n                \"strategyid\": 1,\n                \"description\": \"very defensive\",\n                \"risk\": 2.2\n            },\n            \"active\": true\n        },\n        {\n            \"profileid\": 2,\n            \"dateCreated\": 1551624864000,\n            \"strategy\": {\n                \"strategyid\": 4,\n                \"description\": \"moderately offensive\",\n                \"risk\": 4.2\n            },\n            \"active\": false\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Ask for MA consultation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/help/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"help",
+						"1"
+					]
+				},
+				"description": "cro marks a consultation request that needs further review from an MA"
+			},
+			"response": [
+				{
+					"name": "Ask for MA consultation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/request/help/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"request",
+								"help",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "883"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:00:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requestid\": 1,\n    \"cro\": {\n        \"userid\": 1,\n        \"username\": \"lalakis\",\n        \"name\": \"Aggelos\",\n        \"surname\": \"Dimopoulos\",\n        \"birthdate\": 1551477600000,\n        \"phone\": \"2104567495\",\n        \"email\": \"tsiri@mailinator.com\",\n        \"date_added\": 1551544733000,\n        \"status\": \"active\",\n        \"roles\": [\n            {\n                \"roleid\": 1,\n                \"role\": \"CRO\"\n            }\n        ]\n    },\n    \"customer\": {\n        \"customerid\": 1,\n        \"name\": \"Giorgos\",\n        \"surname\": \"Vourdoumpasis\",\n        \"address\": \"Deli 90\",\n        \"birthdate\": 1551477600000,\n        \"phone\": \"2108866957\",\n        \"email\": \"giorgos@mailinator.com\",\n        \"date_added\": 1551544836000,\n        \"status\": \"active\",\n        \"account\": {\n            \"accountid\": 1,\n            \"date_opened\": 1551544864000,\n            \"assets\": [\n                {\n                    \"assetid\": 1,\n                    \"name\": \"Rice\",\n                    \"value\": 2.2,\n                    \"type\": {\n                        \"assettypeid\": 2,\n                        \"type\": \"STOCK\"\n                    }\n                }\n            ]\n        },\n        \"investmentProfile\": {\n            \"profileid\": 1,\n            \"dateCreated\": 1551569806000,\n            \"strategy\": {\n                \"strategyid\": 1,\n                \"description\": \"very defensive\",\n                \"risk\": 2.2\n            },\n            \"active\": true\n        }\n    },\n    \"dateRequested\": 1552055284000,\n    \"proccessed\": false,\n    \"marequired\": true,\n    \"document\": {\n        \"documentid\": 1,\n        \"json\": \"{\\\"test\\\":true}\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Assign ConsultRequest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/assigntoma/1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"assigntoma",
+						"1",
+						"1"
+					]
+				},
+				"description": "MA assign a consult request to himself"
+			},
+			"response": [
+				{
+					"name": "Assign ConsultRequest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/request/assigntoma/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"request",
+								"assigntoma",
+								"1",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1121"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:05:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requestid\": 1,\n    \"cro\": {\n        \"userid\": 1,\n        \"username\": \"lalakis\",\n        \"name\": \"Aggelos\",\n        \"surname\": \"Dimopoulos\",\n        \"birthdate\": 1551477600000,\n        \"phone\": \"2104567495\",\n        \"email\": \"tsiri@mailinator.com\",\n        \"date_added\": 1551544733000,\n        \"status\": \"active\",\n        \"roles\": [\n            {\n                \"roleid\": 1,\n                \"role\": \"CRO\"\n            }\n        ]\n    },\n    \"ma\": {\n        \"userid\": 1,\n        \"username\": \"lalakis\",\n        \"name\": \"Aggelos\",\n        \"surname\": \"Dimopoulos\",\n        \"birthdate\": 1551477600000,\n        \"phone\": \"2104567495\",\n        \"email\": \"tsiri@mailinator.com\",\n        \"date_added\": 1551544733000,\n        \"status\": \"active\",\n        \"roles\": [\n            {\n                \"roleid\": 1,\n                \"role\": \"CRO\"\n            }\n        ]\n    },\n    \"customer\": {\n        \"customerid\": 1,\n        \"name\": \"Giorgos\",\n        \"surname\": \"Vourdoumpasis\",\n        \"address\": \"Deli 90\",\n        \"birthdate\": 1551477600000,\n        \"phone\": \"2108866957\",\n        \"email\": \"giorgos@mailinator.com\",\n        \"date_added\": 1551544836000,\n        \"status\": \"active\",\n        \"account\": {\n            \"accountid\": 1,\n            \"date_opened\": 1551544864000,\n            \"assets\": [\n                {\n                    \"assetid\": 1,\n                    \"name\": \"Rice\",\n                    \"value\": 2.2,\n                    \"type\": {\n                        \"assettypeid\": 2,\n                        \"type\": \"STOCK\"\n                    }\n                }\n            ]\n        },\n        \"investmentProfile\": {\n            \"profileid\": 1,\n            \"dateCreated\": 1551569806000,\n            \"strategy\": {\n                \"strategyid\": 1,\n                \"description\": \"very defensive\",\n                \"risk\": 2.2\n            },\n            \"active\": true\n        }\n    },\n    \"dateRequested\": 1552055284000,\n    \"proccessed\": false,\n    \"marequired\": true,\n    \"document\": {\n        \"documentid\": 1,\n        \"json\": \"{\\\"test\\\":true}\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GetConsultRequests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/all/1?proccessed=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"all",
+						"1"
+					],
+					"query": [
+						{
+							"key": "proccessed",
+							"value": "true"
+						}
+					]
+				},
+				"description": "get all open consult requests"
+			},
+			"response": [
+				{
+					"name": "GetConsultRequests",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/request/all/1?proccessed=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"request",
+								"all",
+								"1"
+							],
+							"query": [
+								{
+									"key": "proccessed",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1176"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:12:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 0,\n    \"responseMessage\": \"OK\",\n    \"requests\": [\n        {\n            \"requestid\": 1,\n            \"cro\": {\n                \"userid\": 1,\n                \"username\": \"lalakis\",\n                \"name\": \"Aggelos\",\n                \"surname\": \"Dimopoulos\",\n                \"birthdate\": 1551477600000,\n                \"phone\": \"2104567495\",\n                \"email\": \"tsiri@mailinator.com\",\n                \"date_added\": 1551544733000,\n                \"status\": \"active\",\n                \"roles\": [\n                    {\n                        \"roleid\": 1,\n                        \"role\": \"CRO\"\n                    }\n                ]\n            },\n            \"ma\": {\n                \"userid\": 1,\n                \"username\": \"lalakis\",\n                \"name\": \"Aggelos\",\n                \"surname\": \"Dimopoulos\",\n                \"birthdate\": 1551477600000,\n                \"phone\": \"2104567495\",\n                \"email\": \"tsiri@mailinator.com\",\n                \"date_added\": 1551544733000,\n                \"status\": \"active\",\n                \"roles\": [\n                    {\n                        \"roleid\": 1,\n                        \"role\": \"CRO\"\n                    }\n                ]\n            },\n            \"customer\": {\n                \"customerid\": 1,\n                \"name\": \"Giorgos\",\n                \"surname\": \"Vourdoumpasis\",\n                \"address\": \"Deli 90\",\n                \"birthdate\": 1551477600000,\n                \"phone\": \"2108866957\",\n                \"email\": \"giorgos@mailinator.com\",\n                \"date_added\": 1551544836000,\n                \"status\": \"active\",\n                \"account\": {\n                    \"accountid\": 1,\n                    \"date_opened\": 1551544864000,\n                    \"assets\": [\n                        {\n                            \"assetid\": 1,\n                            \"name\": \"Rice\",\n                            \"value\": 2.2,\n                            \"type\": {\n                                \"assettypeid\": 2,\n                                \"type\": \"STOCK\"\n                            }\n                        }\n                    ]\n                },\n                \"investmentProfile\": {\n                    \"profileid\": 1,\n                    \"dateCreated\": 1551569806000,\n                    \"strategy\": {\n                        \"strategyid\": 1,\n                        \"description\": \"very defensive\",\n                        \"risk\": 2.2\n                    },\n                    \"active\": true\n                }\n            },\n            \"dateRequested\": 1552055284000,\n            \"proccessed\": false,\n            \"marequired\": true,\n            \"document\": {\n                \"documentid\": 1,\n                \"json\": \"{\\\"test\\\":true}\"\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "GetConsultRequests",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/request/all/1?proccessed=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"request",
+								"all",
+								"1"
+							],
+							"query": [
+								{
+									"key": "proccessed",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:13:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 0,\n    \"responseMessage\": \"OK\",\n    \"requests\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "createReposrt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"requestid\":1,\n\t\"jsondocument\":\"hdhdh\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/report/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"report",
+						"2"
+					]
+				},
+				"description": "create report"
+			},
+			"response": [
+				{
+					"name": "createReposrt",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"requestid\":1,\n\t\"jsondocument\":\"hdhdh\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/report/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"report",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "259"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:29:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reportid\": 1,\n    \"ma\": {\n        \"userid\": 2,\n        \"username\": \"dd\",\n        \"name\": \"dd\",\n        \"surname\": \"dd\",\n        \"birthdate\": 1551996000000,\n        \"phone\": \"42424\",\n        \"email\": \"dd@dd.dd\",\n        \"date_added\": 1552058893000,\n        \"status\": \"active\",\n        \"roles\": [\n            {\n                \"roleid\": 2,\n                \"role\": \"MA\"\n            }\n        ]\n    },\n    \"document\": {\n        \"documentid\": 3,\n        \"json\": \"hdhdh\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllReports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/report/all/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"report",
+						"all",
+						"2"
+					]
+				},
+				"description": "get all consult reports for ma"
+			},
+			"response": [
+				{
+					"name": "getAllReports",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/report/all/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"report",
+								"all",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "313"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:44:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 0,\n    \"responseMessage\": \"OK\",\n    \"reports\": [\n        {\n            \"reportid\": 2,\n            \"ma\": {\n                \"userid\": 2,\n                \"username\": \"dd\",\n                \"name\": \"dd\",\n                \"surname\": \"dd\",\n                \"birthdate\": 1551996000000,\n                \"phone\": \"42424\",\n                \"email\": \"dd@dd.dd\",\n                \"date_added\": 1552058893000,\n                \"status\": \"active\",\n                \"roles\": [\n                    {\n                        \"roleid\": 2,\n                        \"role\": \"MA\"\n                    }\n                ]\n            },\n            \"document\": {\n                \"documentid\": 4,\n                \"json\": \"hdhdh\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "createProposal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"requestid\":1,\n\t\"jsondocument\":\"uuuuu\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal",
+						"1"
+					]
+				},
+				"description": "create investment proposal"
+			},
+			"response": [
+				{
+					"name": "createProposal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"requestid\":1,\n\t\"jsondocument\":\"uuuuu\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1471"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 15:56:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"proposalid\": 1,\n    \"accepted\": false,\n    \"request\": {\n        \"requestid\": 1,\n        \"cro\": {\n            \"userid\": 1,\n            \"username\": \"lalakis\",\n            \"name\": \"Aggelos\",\n            \"surname\": \"Dimopoulos\",\n            \"birthdate\": 1551477600000,\n            \"phone\": \"2104567495\",\n            \"email\": \"tsiri@mailinator.com\",\n            \"date_added\": 1551544733000,\n            \"status\": \"active\",\n            \"roles\": [\n                {\n                    \"roleid\": 1,\n                    \"role\": \"CRO\"\n                }\n            ]\n        },\n        \"ma\": {\n            \"userid\": 2,\n            \"username\": \"dd\",\n            \"name\": \"dd\",\n            \"surname\": \"dd\",\n            \"birthdate\": 1551996000000,\n            \"phone\": \"42424\",\n            \"email\": \"dd@dd.dd\",\n            \"date_added\": 1552058893000,\n            \"status\": \"active\",\n            \"roles\": [\n                {\n                    \"roleid\": 2,\n                    \"role\": \"MA\"\n                }\n            ]\n        },\n        \"customer\": {\n            \"customerid\": 1,\n            \"name\": \"Giorgos\",\n            \"surname\": \"Vourdoumpasis\",\n            \"address\": \"Deli 90\",\n            \"birthdate\": 1551477600000,\n            \"phone\": \"2108866957\",\n            \"email\": \"giorgos@mailinator.com\",\n            \"date_added\": 1551544836000,\n            \"status\": \"active\",\n            \"account\": {\n                \"accountid\": 1,\n                \"date_opened\": 1551544864000,\n                \"assets\": [\n                    {\n                        \"assetid\": 1,\n                        \"name\": \"Rice\",\n                        \"value\": 2.2,\n                        \"type\": {\n                            \"assettypeid\": 2,\n                            \"type\": \"STOCK\"\n                        }\n                    }\n                ]\n            },\n            \"investmentProfile\": {\n                \"profileid\": 1,\n                \"dateCreated\": 1551569806000,\n                \"strategy\": {\n                    \"strategyid\": 1,\n                    \"description\": \"very defensive\",\n                    \"risk\": 2.2\n                },\n                \"active\": true\n            }\n        },\n        \"dateRequested\": 1552055284000,\n        \"dateProccessed\": 1552060568798,\n        \"proccessed\": true,\n        \"marequired\": true,\n        \"report\": {\n            \"reportid\": 2,\n            \"ma\": {\n                \"userid\": 2,\n                \"username\": \"dd\",\n                \"name\": \"dd\",\n                \"surname\": \"dd\",\n                \"birthdate\": 1551996000000,\n                \"phone\": \"42424\",\n                \"email\": \"dd@dd.dd\",\n                \"date_added\": 1552058893000,\n                \"status\": \"active\",\n                \"roles\": [\n                    {\n                        \"roleid\": 2,\n                        \"role\": \"MA\"\n                    }\n                ]\n            },\n            \"document\": {\n                \"documentid\": 4,\n                \"json\": \"hdhdh\"\n            }\n        },\n        \"document\": {\n            \"documentid\": 1,\n            \"json\": \"{\\\"test\\\":true}\"\n        }\n    },\n    \"document\": {\n        \"documentid\": 7,\n        \"json\": \"uuuuu\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllPoposals",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal/all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal",
+						"all",
+						"1"
+					]
+				},
+				"description": "get all investment proposals of a cro"
+			},
+			"response": [
+				{
+					"name": "getAllPoposals",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal/all/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal",
+								"all",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1527"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Mar 2019 16:08:16 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 0,\n    \"responseMessage\": \"OK\",\n    \"proposals\": [\n        {\n            \"proposalid\": 1,\n            \"accepted\": false,\n            \"request\": {\n                \"requestid\": 1,\n                \"cro\": {\n                    \"userid\": 1,\n                    \"username\": \"lalakis\",\n                    \"name\": \"Aggelos\",\n                    \"surname\": \"Dimopoulos\",\n                    \"birthdate\": 1551477600000,\n                    \"phone\": \"2104567495\",\n                    \"email\": \"tsiri@mailinator.com\",\n                    \"date_added\": 1551544733000,\n                    \"status\": \"active\",\n                    \"roles\": [\n                        {\n                            \"roleid\": 1,\n                            \"role\": \"CRO\"\n                        }\n                    ]\n                },\n                \"ma\": {\n                    \"userid\": 2,\n                    \"username\": \"dd\",\n                    \"name\": \"dd\",\n                    \"surname\": \"dd\",\n                    \"birthdate\": 1551996000000,\n                    \"phone\": \"42424\",\n                    \"email\": \"dd@dd.dd\",\n                    \"date_added\": 1552058893000,\n                    \"status\": \"active\",\n                    \"roles\": [\n                        {\n                            \"roleid\": 2,\n                            \"role\": \"MA\"\n                        }\n                    ]\n                },\n                \"customer\": {\n                    \"customerid\": 1,\n                    \"name\": \"Giorgos\",\n                    \"surname\": \"Vourdoumpasis\",\n                    \"address\": \"Deli 90\",\n                    \"birthdate\": 1551477600000,\n                    \"phone\": \"2108866957\",\n                    \"email\": \"giorgos@mailinator.com\",\n                    \"date_added\": 1551544836000,\n                    \"status\": \"active\",\n                    \"account\": {\n                        \"accountid\": 1,\n                        \"date_opened\": 1551544864000,\n                        \"assets\": [\n                            {\n                                \"assetid\": 1,\n                                \"name\": \"Rice\",\n                                \"value\": 2.2,\n                                \"type\": {\n                                    \"assettypeid\": 2,\n                                    \"type\": \"STOCK\"\n                                }\n                            }\n                        ]\n                    },\n                    \"investmentProfile\": {\n                        \"profileid\": 1,\n                        \"dateCreated\": 1551569806000,\n                        \"strategy\": {\n                            \"strategyid\": 1,\n                            \"description\": \"very defensive\",\n                            \"risk\": 2.2\n                        },\n                        \"active\": true\n                    }\n                },\n                \"dateRequested\": 1552055284000,\n                \"dateProccessed\": 1552060568000,\n                \"proccessed\": true,\n                \"marequired\": true,\n                \"report\": {\n                    \"reportid\": 2,\n                    \"ma\": {\n                        \"userid\": 2,\n                        \"username\": \"dd\",\n                        \"name\": \"dd\",\n                        \"surname\": \"dd\",\n                        \"birthdate\": 1551996000000,\n                        \"phone\": \"42424\",\n                        \"email\": \"dd@dd.dd\",\n                        \"date_added\": 1552058893000,\n                        \"status\": \"active\",\n                        \"roles\": [\n                            {\n                                \"roleid\": 2,\n                                \"role\": \"MA\"\n                            }\n                        ]\n                    },\n                    \"document\": {\n                        \"documentid\": 4,\n                        \"json\": \"hdhdh\"\n                    }\n                },\n                \"document\": {\n                    \"documentid\": 1,\n                    \"json\": \"{\\\"test\\\":true}\"\n                }\n            },\n            \"document\": {\n                \"documentid\": 7,\n                \"json\": \"uuuuu\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"terminator\",\n\t\"password\":\"secret\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Proposal Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NTIxNTU1MjIsInJvbGUiOlsiQ1JPIl0sImlzcyI6IlRSVVNURURfQ0FMTEVSIiwiZXhwIjoxNTUyMTU3MzIyLCJpYXQiOjE1NTIxNTU1MjIsInVzZXJJZCI6MSwianRpIjoiY2RiYWFkZWQtY2M4YS00NTM5LTkwMGMtODEyN2JmMWVkYjIyIn0.lug4kKHqP39X0kBYYGd0EU-V8_s5eSwUGDD7W7QCQRI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal/updatestatus/1/ACCEPTED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal",
+						"updatestatus",
+						"1",
+						"ACCEPTED"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update Proposal Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal/updatestatus/1/ACCEPTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal",
+								"updatestatus",
+								"1",
+								"ACCEPTED"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1508"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Mar 2019 18:25:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"proposalid\": 1,\n    \"dateStatusUpdated\": 1552155906732,\n    \"status\": \"ACCEPTED\",\n    \"request\": {\n        \"requestid\": 1,\n        \"cro\": {\n            \"userid\": 1,\n            \"username\": \"lalakis\",\n            \"name\": \"Aggelos\",\n            \"surname\": \"Dimopoulos\",\n            \"birthdate\": 1551477600000,\n            \"phone\": \"2104567495\",\n            \"email\": \"tsiri@mailinator.com\",\n            \"date_added\": 1551544733000,\n            \"status\": \"active\",\n            \"roles\": [\n                {\n                    \"roleid\": 1,\n                    \"role\": \"CRO\"\n                }\n            ]\n        },\n        \"ma\": {\n            \"userid\": 2,\n            \"username\": \"dd\",\n            \"name\": \"dd\",\n            \"surname\": \"dd\",\n            \"birthdate\": 1551996000000,\n            \"phone\": \"42424\",\n            \"email\": \"dd@dd.dd\",\n            \"date_added\": 1552058893000,\n            \"status\": \"active\",\n            \"roles\": [\n                {\n                    \"roleid\": 2,\n                    \"role\": \"MA\"\n                }\n            ]\n        },\n        \"customer\": {\n            \"customerid\": 1,\n            \"name\": \"Giorgos\",\n            \"surname\": \"Vourdoumpasis\",\n            \"address\": \"Deli 90\",\n            \"birthdate\": 1551477600000,\n            \"phone\": \"2108866957\",\n            \"email\": \"giorgos@mailinator.com\",\n            \"date_added\": 1551544836000,\n            \"status\": \"active\",\n            \"account\": {\n                \"accountid\": 1,\n                \"date_opened\": 1551544864000,\n                \"assets\": [\n                    {\n                        \"assetid\": 1,\n                        \"name\": \"Rice\",\n                        \"value\": 2.2,\n                        \"type\": {\n                            \"assettypeid\": 2,\n                            \"type\": \"STOCK\"\n                        }\n                    }\n                ]\n            },\n            \"investmentProfile\": {\n                \"profileid\": 1,\n                \"dateCreated\": 1551569806000,\n                \"strategy\": {\n                    \"strategyid\": 1,\n                    \"description\": \"very defensive\",\n                    \"risk\": 2.2\n                },\n                \"active\": true\n            }\n        },\n        \"dateRequested\": 1552055284000,\n        \"dateProccessed\": 1552060568000,\n        \"proccessed\": true,\n        \"marequired\": true,\n        \"report\": {\n            \"reportid\": 2,\n            \"ma\": {\n                \"userid\": 2,\n                \"username\": \"dd\",\n                \"name\": \"dd\",\n                \"surname\": \"dd\",\n                \"birthdate\": 1551996000000,\n                \"phone\": \"42424\",\n                \"email\": \"dd@dd.dd\",\n                \"date_added\": 1552058893000,\n                \"status\": \"active\",\n                \"roles\": [\n                    {\n                        \"roleid\": 2,\n                        \"role\": \"MA\"\n                    }\n                ]\n            },\n            \"document\": {\n                \"documentid\": 4,\n                \"json\": \"hdhdh\"\n            }\n        },\n        \"document\": {\n            \"documentid\": 1,\n            \"json\": \"{\\\"test\\\":true}\"\n        }\n    },\n    \"document\": {\n        \"documentid\": 7,\n        \"json\": \"uuuuu\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1NDkyMDQ0MDMsInJvbGUiOlsiU1VQRVJWSVNPUiJdLCJpc3MiOiJUUlVTVEVEX0NBTExFUiIsImV4cCI6MTU0OTIwNDcwMywiaWF0IjoxNTQ5MjA0NDAzLCJ1c2VySWQiOjMwLCJqdGkiOiJkYjI0MDMxNy0yM2ZhLTQ1Y2UtYmVjMi1jMmRlOTMyMGZkNzQifQ.DolaThWtlWv5XdTMcy-8_4CYCFoSTpoGM2tMVHzA5CA",
+				"type": "string"
+			}
+		]
+	}
+}

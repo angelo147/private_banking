@@ -25,15 +25,3 @@ swarm:
       handlers:
         - CONSOLE
         - FILE
-
-  mail:
-    smtp:
-      host: smtp.gmail.com
-      port: 587
-    mail-sessions:
-      GOOGLE:
-        smtp-server:
-          username: dimoange@gmail.com
-          password: k@ss@fucksnr0cks!
-          tls: true
-        from: dimoange@gmail.com

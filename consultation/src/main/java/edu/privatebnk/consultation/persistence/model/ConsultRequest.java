@@ -1,15 +1,22 @@
 package edu.privatebnk.consultation.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "consultrequest", schema = "private_banking", catalog = "")
 @NamedQueries({
-        @NamedQuery(name = "ConsultRequest.findAllByStatusCRO", query = "SELECT cr FROM ConsultRequest cr where cr.proccessed=:proccessed and cr.cro.userid=:userid"),
-        @NamedQuery(name = "ConsultRequest.findAllCRO", query = "SELECT cr FROM ConsultRequest cr where cr.cro.userid=:userid"),
-        @NamedQuery(name = "ConsultRequest.findAllByStatusMA", query = "SELECT cr FROM ConsultRequest cr where cr.proccessed=:proccessed and cr.cro.userid=:userid and cr.marequired=true"),
-        @NamedQuery(name = "ConsultRequest.findAllMA", query = "SELECT cr FROM ConsultRequest cr where cr.cro.userid=:userid and cr.marequired=true")
+        @NamedQuery(name = "ConsultRequest.findAllByStatusCRO", query = "SELECT cr FROM ConsultRequest cr left join cr.proposal pr where cr.proccessed=:proccessed and " +
+                "(pr is null or pr.status=edu.privatebnk.consultation.rest.ProposalStatus.PENDING) and  cr.cro.userid=:userid"),
+        @NamedQuery(name = "ConsultRequest.findAllCRO", query = "SELECT cr FROM ConsultRequest cr left join cr.proposal pr where cr.cro.userid=:userid and " +
+                "(pr is null or pr.status=edu.privatebnk.consultation.rest.ProposalStatus.PENDING)"),
+        @NamedQuery(name = "ConsultRequest.findAllByStatusMA", query = "SELECT cr FROM ConsultRequest cr left join cr.proposal pr where  cr.proccessed=:proccessed and cr.ma.userid=:userid and cr.marequired=true and " +
+                "(pr is null or pr.status=edu.privatebnk.consultation.rest.ProposalStatus.PENDING)"),
+        @NamedQuery(name = "ConsultRequest.findAllMA", query = "SELECT cr FROM ConsultRequest cr left join cr.proposal pr where cr.ma.userid=:userid and cr.marequired=true and " +
+                "(pr is null or pr.status=edu.privatebnk.consultation.rest.ProposalStatus.PENDING)"),
+        @NamedQuery(name = "ConsultRequest.findById", query = "SELECT cr FROM ConsultRequest cr where cr.requestid=:id")
 })
 public class ConsultRequest {
     private int requestid;
@@ -21,6 +28,7 @@ public class ConsultRequest {
     private boolean proccessed;
     private boolean marequired;
     private ConsultReport report;
+    @JsonIgnore
     private InvestProposal proposal;
     private JsonDocument document;
 
@@ -116,7 +124,8 @@ public class ConsultRequest {
         this.marequired = marequired;
     }
 
-    @OneToOne(mappedBy = "request")
+    @OneToOne(mappedBy = "request",fetch = FetchType.LAZY)
+    //@Transient
     public InvestProposal getProposal() {
         return proposal;
     }

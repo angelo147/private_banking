@@ -16,6 +16,27 @@ public class Controller {
     private EntityManager em;
     private final static Logger log = Logger.getLogger(Controller.class);
 
+    public void create(Object o) {
+        em.persist(o);
+    }
+
+    public void update(Object o) {
+        em.merge(o);
+    }
+
+    public InvestProposal findProposalById(int id) {
+        log.infov("finding InvestProposal instances for id {0}", id);
+        InvestProposal user;
+        try {
+            user = em.find(InvestProposal.class, id);
+        } catch (RuntimeException re) {
+            log.error("find by Id failed", re);
+            return null;
+        }
+        log.infov("Found {0} InvestProposal relationships!", user);
+        return user;
+    }
+
     public Customer findById(int id) {
         log.infov("finding UserEntity instances for id {0}", id);
         Customer user;
@@ -115,7 +136,7 @@ public class Controller {
     public List<ConsultRequest> findConsultRequestsBystatusMA(int userid, boolean proccessed) {
         List<ConsultRequest> requests;
         try {
-            requests = em.createNamedQuery("ConsultRequest.findAllByStatusCRO", ConsultRequest.class)
+            requests = em.createNamedQuery("ConsultRequest.findAllByStatusMA", ConsultRequest.class)
                     .setParameter("proccessed", proccessed)
                     .setParameter("userid", userid)
                     .getResultList();
@@ -130,7 +151,7 @@ public class Controller {
     public List<ConsultRequest> findConsultRequestsMA(int userid) {
         List<ConsultRequest> requests;
         try {
-            requests = em.createNamedQuery("ConsultRequest.findAllCRO", ConsultRequest.class)
+            requests = em.createNamedQuery("ConsultRequest.findAllMA", ConsultRequest.class)
                     .setParameter("userid", userid)
                     .getResultList();
         } catch (RuntimeException re) {
@@ -153,5 +174,20 @@ public class Controller {
         }
         log.infov("Found {0} UserEntity relationships!", reports);
         return reports;
+    }
+
+    public ConsultRequest findRequestById(int id) {
+        log.infov("finding ConsultRequest instances for id {0}", id);
+        ConsultRequest user;
+        try {
+            user = em.createNamedQuery("ConsultRequest.findById", ConsultRequest.class)
+                    .setParameter("id", id)
+                    .getResultList().stream().findFirst().orElse(null);
+        } catch (RuntimeException re) {
+            log.error("find by Id failed", re);
+            return null;
+        }
+        log.infov("Found {0} ConsultRequest relationships!", user);
+        return user;
     }
 }

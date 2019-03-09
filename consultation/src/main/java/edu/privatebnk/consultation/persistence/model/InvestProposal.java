@@ -1,20 +1,27 @@
 package edu.privatebnk.consultation.persistence.model;
 
+import edu.privatebnk.consultation.rest.ProposalStatus;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "investmentprofile", schema = "private_banking", catalog = "")
+@Table(name = "investproposal", schema = "private_banking", catalog = "")
 public class InvestProposal {
     private int proposalid;
     //private UserEntity cro;
     //private Customer customer;
     private Date dateIssued;
-    private Date dateAccepted;
-    private boolean accepted;
+    private Date dateStatusUpdated;
+    private ProposalStatus status;
     private ConsultRequest request;
     private JsonDocument document;
 
+    @PrePersist
+    private void onCreate(){
+        dateIssued = new Date();
+        status = ProposalStatus.PENDING;
+    }
     @Id
     @Column(name = "proposalid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +33,15 @@ public class InvestProposal {
         this.proposalid = proposalid;
     }
 
-    /*public UserEntity getCro() {
+    @Enumerated(EnumType.STRING)
+    public ProposalStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ProposalStatus status) {
+        this.status = status;
+    }
+/*public UserEntity getCro() {
         return cro;
     }
 
@@ -50,20 +65,12 @@ public class InvestProposal {
         this.dateIssued = dateIssued;
     }
 
-    public Date getDateAccepted() {
-        return dateAccepted;
+    public Date getDateStatusUpdated() {
+        return dateStatusUpdated;
     }
 
-    public void setDateAccepted(Date dateAccepted) {
-        this.dateAccepted = dateAccepted;
-    }
-
-    public boolean isAccepted() {
-        return accepted;
-    }
-
-    public void setAccepted(boolean accepted) {
-        this.accepted = accepted;
+    public void setDateStatusUpdated(Date dateStatusUpdated) {
+        this.dateStatusUpdated = dateStatusUpdated;
     }
 
     @OneToOne
@@ -76,7 +83,7 @@ public class InvestProposal {
         this.request = request;
     }
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "documentid", referencedColumnName = "documentid", nullable = false)
     public JsonDocument getDocument() {
         return document;
