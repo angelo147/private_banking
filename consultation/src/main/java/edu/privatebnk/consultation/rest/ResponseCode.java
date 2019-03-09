@@ -2,8 +2,8 @@ package edu.privatebnk.consultation.rest;
 
 public enum ResponseCode {
     OK(0, "OK", "OK"),
-    ERRSENDMSG(100, "Error Sending Email or SMS", "OK"),
-    INVTOKEN(600, "Invalid Token", "OK"),
+    INVDATA(600, "Invalid Data", "OK"),
+    NODATA(600, "No data found", "OK"),
     LOGINFAILED(900, "Login failed", "OK");
 
     private int responseCode;

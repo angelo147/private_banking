@@ -69,16 +69,16 @@ public class ConsultationEndpoint {
                 ResponseWrapper wrapper = new ResponseWrapper(ResponseCode.OK, null, controller.findProfilesforCust(custid));
                 return Response.ok(wrapper).type(MediaType.APPLICATION_JSON_TYPE).build();
             } else
-                return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.LOGINFAILED)).type(MediaType.APPLICATION_JSON_TYPE).build();
+                return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.NODATA)).type(MediaType.APPLICATION_JSON_TYPE).build();
         } else if(id.stream().anyMatch(role->role==Role.CRO)) {
             Customer customer1 = controller.findCustomersForCro(userid).stream().filter(customer -> custid == customer.getCustomerid()).findFirst().orElse(null);
             if (customer1 != null) {
                 ResponseWrapper wrapper = new ResponseWrapper(ResponseCode.OK, null, controller.findProfilesforCust(custid));
                 return Response.ok(wrapper).type(MediaType.APPLICATION_JSON_TYPE).build();
             } else
-                return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.LOGINFAILED)).type(MediaType.APPLICATION_JSON_TYPE).build();
+                return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.NODATA)).type(MediaType.APPLICATION_JSON_TYPE).build();
         }
-        return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.LOGINFAILED)).type(MediaType.APPLICATION_JSON_TYPE).build();
+        return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.INVDATA)).type(MediaType.APPLICATION_JSON_TYPE).build();
     }
 
     @GET
@@ -197,7 +197,7 @@ public class ConsultationEndpoint {
             controller.create(consultReport);
             return Response.ok(consultReport).type(MediaType.APPLICATION_JSON_TYPE).build();
         } else
-            return Response.serverError().type(MediaType.APPLICATION_JSON_TYPE).build();
+            return Response.ok(new edu.privatebnk.consultation.rest.Response(ResponseCode.INVDATA)).type(MediaType.APPLICATION_JSON_TYPE).build();
     }
 
     /**
