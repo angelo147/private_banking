@@ -9,6 +9,7 @@ import java.util.Set;
 @Table(name = "account", schema = "private_banking", catalog = "")
 public class Account {
     private int accountid;
+    private String accountnumber;
     @JsonIgnore
     private Customer customer;
     private Date date_opened;
@@ -23,6 +24,14 @@ public class Account {
 
     public void setAccountid(int accountid) {
         this.accountid = accountid;
+    }
+
+    public String getAccountnumber() {
+        return accountnumber;
+    }
+
+    public void setAccountnumber(String accountnumber) {
+        this.accountnumber = accountnumber;
     }
 
     @OneToOne
