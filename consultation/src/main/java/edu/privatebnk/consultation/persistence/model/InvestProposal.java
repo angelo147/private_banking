@@ -9,11 +9,10 @@ import java.util.Date;
 @Table(name = "investproposal", schema = "private_banking", catalog = "")
 public class InvestProposal {
     private int proposalid;
-    //private UserEntity cro;
-    //private Customer customer;
     private Date dateIssued;
     private Date dateStatusUpdated;
     private ProposalStatus status;
+    private double commisionrate;
     private ConsultRequest request;
     private JsonDocument document;
 
@@ -41,21 +40,14 @@ public class InvestProposal {
     public void setStatus(ProposalStatus status) {
         this.status = status;
     }
-/*public UserEntity getCro() {
-        return cro;
+
+    public double getCommisionrate() {
+        return commisionrate;
     }
 
-    public void setCro(UserEntity cro) {
-        this.cro = cro;
+    public void setCommisionrate(double commisionrate) {
+        this.commisionrate = commisionrate;
     }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }*/
 
     public Date getDateIssued() {
         return dateIssued;

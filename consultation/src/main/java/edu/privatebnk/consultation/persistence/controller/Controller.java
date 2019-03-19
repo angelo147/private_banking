@@ -24,6 +24,19 @@ public class Controller {
         em.merge(o);
     }
 
+    public List<Charge> findCharges() {
+        List<Charge> charge;
+        try {
+            charge = em.createNamedQuery("Charge.findAll", Charge.class)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            log.error("find by Charge failed", re);
+            return null;
+        }
+        log.infov("Found {0} Charge relationships!", charge);
+        return charge;
+    }
+
     public InvestProposal findProposalById(int id) {
         log.infov("finding InvestProposal instances for id {0}", id);
         InvestProposal user;

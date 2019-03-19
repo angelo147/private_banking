@@ -233,6 +233,10 @@ public class ConsultationEndpoint {
         JsonDocument jsonDocument = new JsonDocument();
         jsonDocument.setJson(proposalRequest.getJsondocument());
         investProposal.setDocument(jsonDocument);
+        List<Charge> charges = controller.findCharges();
+        double t = request.getCustomer().getInvestmentProfile().getInvestAmmount();
+        Charge charge = charges.stream().filter(cha-> t > cha.getInvestamount_lowlimit() && t <= cha.getInvestamount_upperlimit()).findAny().orElse(new Charge());
+        investProposal.setCommisionrate(charge.getPercentagecommisionrate());
         controller.create(investProposal);
         request.setProccessed(true);
         request.setDateProccessed(new Date());

@@ -14,6 +14,7 @@ public class InvestmentProfile {
     private Customer customer;
     private Date dateCreated;
     private Strategy strategy;
+    private double investAmmount;
     private boolean active;
 
     @Id
@@ -61,5 +62,13 @@ public class InvestmentProfile {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public double getInvestAmmount() {
+        return investAmmount;
+    }
+
+    public void setInvestAmmount(double investAmmount) {
+        this.investAmmount = investAmmount;
     }
 }
